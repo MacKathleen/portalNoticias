@@ -1,0 +1,89 @@
+/* root.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F3EAD6; /* Fundo mais claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #A66D45; /* Cor mais escura para contraste */
+}
+
+.main {
+    width: 100%;
+    max-width: 400px;
+}
+
+.box {
+    background-color: #D2C98A; /* Fundo médio */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    color: #A66D45;
+    font-weight: bold;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #A66D45;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input#button {
+    background-color: #A66D45;
+    color: #F3EAD6;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input#button:hover {
+    background-color: #8C5731;
+}
+
+.mensagem {
+    margin-top: 10px;
+    color: #A66D45;
+}
+
+a {
+    color: #A66D45;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

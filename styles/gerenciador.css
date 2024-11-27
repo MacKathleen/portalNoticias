@@ -1,0 +1,96 @@
+/* Reset de margens e estilos */
+body, h1, table {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    background-color: #F3EAD6; /* Fundo claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #A66D45; /* Cor mais escura */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Links do menu */
+#links {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #A66D45;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #A66D45;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#links a:hover {
+    background-color: #A66D45;
+    color: #F3EAD6;
+}
+
+/* Tabela */
+main {
+    overflow-x: auto; /* Permite scroll horizontal se necessário */
+    width: 100%;
+    max-width: 900px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #D2C98A; /* Fundo médio */
+    border: 1px solid #A66D45;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #A66D45; /* Cor das bordas */
+    color: #5B4636; /* Cor do texto */
+}
+
+th {
+    background-color: #A66D45;
+    color: #F3EAD6; /* Texto claro no cabeçalho */
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #F3EAD6; /* Alterna as linhas da tabela */
+}
+
+/* Imagens de ação */
+td img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+td img:hover {
+    transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+}
