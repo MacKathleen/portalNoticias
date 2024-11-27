@@ -11,12 +11,12 @@ class noticia
         $this->conn = $db;
     }
 
-    public function registrar($titulo, $autor, $data, $noticia, $foto)
+    public function registrar($titulo, $autor, $data, $noticias, $fotos)
     {
 
-        $query = "INSERT INTO " . $this->table_name . " (titulo,autor,data,noticia,foto) VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO " . $this->table_name . " (titulo,autor,data,noticias,fotos) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$titulo, $autor, $data, $noticia, $foto]);
+        $stmt->execute([$titulo, $autor, $data, $noticias, $fotos]);
 
         return $stmt;
     }
@@ -40,11 +40,11 @@ class noticia
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function atualizar($id, $titulo, $autor, $data, $noticia, $foto)
+    public function atualizar($id, $titulo, $autor, $data, $noticias, $fotos)
     {
-        $query = "UPDATE " . $this->table_name . " SET titulo = ?, autor = ?, data = ?, noticia = ?,foto = ? WHERE id = ?";
+        $query = "UPDATE " . $this->table_name . " SET titulo = ?, autor = ?, data = ?, noticias = ?,fotos = ? WHERE id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$titulo, $autor, $data, $noticia, $foto, $id]);
+        $stmt->execute([$titulo, $autor, $data, $noticias, $fotos, $id]);
 
         return $stmt;
     }

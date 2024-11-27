@@ -31,12 +31,14 @@ if (isset($_GET['deletar'])) {
 </head>
 <body>
     <header>
-<h1>gerenciador de noticias</h1>
+<h1>Adicionar um nova notícia</h1>
     </header>
 <div id="links">
-    <a href="logout.php">sair</a>
-    <a href="portal.php">gerenciador de usuarios</a>
-    <a href="cadastroNoticia.php">criar noticia</a>
+    
+    <a href="cadastroNoticia.php">Nova Noticía</a>
+    <a href="portal.php"> Usuario </a>
+    <a href="logout.php">Sair</a>
+
     </div><main>
     <table border="1">
         <tr>
@@ -54,12 +56,11 @@ if (isset($_GET['deletar'])) {
                 <td><?php echo $row['titulo']; ?></td>
                 <td><?php echo ($row['data']);?></td>
                 <td><?php echo $row['autor']; ?></td>
-                
-                <td><?php echo $row['noticia']; ?></td>
-                <td><?php echo $row['foto']; ?></td>
+                <td><?php echo $row['noticias']; ?></td>
+                <td><?php echo $row['fotos']; ?></td>
                 <td>
-                    <a href="deletarNot.php?id=<?php echo $row['id']; ?>"><img id="imgalt"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcx1AupvWZqkA2_GijfJIDCsc1xCNXVNOkDQ&s" alt=""></a>
-                    <a href="editarNot.php?id=<?php echo $row['id']; ?>"><img id="imgex" src="https://cdn.pixabay.com/photo/2017/06/06/00/33/edit-icon-2375785_640.png" alt=""></a>
+                    <a href="deletarNoticia.php?id=<?php echo $row['id']; ?>"><img id="imgalt"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcx1AupvWZqkA2_GijfJIDCsc1xCNXVNOkDQ&s" alt=""></a>
+                    <a href="editarNoticia.php?id=<?php echo $row['id']; ?>"><img id="imgex" src="https://cdn.pixabay.com/photo/2017/06/06/00/33/edit-icon-2375785_640.png" alt=""></a>
                 </td>
             </tr>
         <?php endwhile; ?>

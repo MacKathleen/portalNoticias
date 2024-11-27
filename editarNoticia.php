@@ -5,9 +5,8 @@ if (!isset($_SESSION['usuario_id'])) {
     exit();
 }
 include_once './config/config.php';
-include_once './classes/Usuario.php';
+include_once './classes/usuario.php';
 include_once './classes/noticia.php';
-
 
 $noticias = new noticia($db);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,9 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $data = $_POST['data'];
-    $noticia = $_POST['noticia'];
-    $foto = "./imagens/".$_POST['foto'];
-    $noticias->atualizar($id,$titulo,$autor,$data,$noticia,$foto);
+    $noticia = $_POST['noticias'];
+    $foto = "./imagens/" . $_POST['fotos'];
+    $noticias->atualizar($id, $titulo, $autor, $data, $noticia, $foto);
     header('Location: gerenciador.php');
     exit();
 }
@@ -28,31 +27,40 @@ if (isset($_GET['id'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="styles/editarNoticia.css">
 </head>
+
 <body>
     <h1>Editar Usuário</h1>
     <form method="POST">
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-        <label for="titulo">Nome:</label>
+      
+        <label for="titulo">Título:</label>
         <input type="text" name="titulo" value="<?php echo $row['titulo']; ?>" required>
         <br><br>
-        <label>autor:</label>
+      
+        <label>Autor:</label>
         <input type="text" name="autor" value="<?php echo $row['autor']; ?>" required>
         <br><br>
-        <label>informaçoes da noticia:</label>
-        <input type="text" name="noticia" value="<?php echo $row['noticia']; ?>" required>
+       
+        <label for="noticia">Informações da notícia:</label>
+        <input type="text" id="noticia" name="noticia" value="<?php echo htmlspecialchars($row['noticias']); ?>" required>
         <br><br>
-        <label for="data">data:</label>
+
+        <label for="data">Data:</label>
         <input type="date" name="data" value="<?php echo $row['data']; ?>" required>
         <br><br>
-        <label for="email">Email:</label>
-        <input type="file" name="foto" value="<?php echo $row['foto']; ?>" required>
+      
+        <label for="email">Foto:</label>
+        <input type="file" name="foto" value="<?php echo $row['fotos']; ?>" >
         <br><br>
+        
         <input type="submit" value="Atualizar">
     </form>
 </body>
+
 </html>

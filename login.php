@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //a variavel global session ela cria um acesso (basicamente se nao tiver esse aceso ele nao pode entrar em portal.php 
             //ex:nao da para ir de cadastro para portal porque nao tem essa credencial)
             $_SESSION['usuario_id'] = $dados_usuario['id'];
-          
+
             //vai pra portal.php
             header('Location:portal.php');
 
@@ -35,26 +35,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title> LOGIN </title>
-<link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 
 
 <body>
-    <header>
-        <h1>LOGIN</h1>
-    </header>
 
     <main>
 
         <div class="box">
-
-            <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/7033146-perfil-icone-login-head-icon-vetor.jpg" alt="">
-
+            <h1>LOGIN</h1>
             <form method="POST">
                 <label for="email">Email</label>
                 <input type="email" name="email" required>
