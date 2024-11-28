@@ -38,6 +38,7 @@ if (isset($_GET['deletar'])) {
     <a href="cadastroNoticia.php">Nova Noticía</a>
     <a href="portal.php"> Usuario </a>
     <a href="logout.php">Sair</a>
+    <a href="index.php">Visualizar</a>
 
     </div><main>
     <table border="1">

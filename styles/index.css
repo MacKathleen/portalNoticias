@@ -7,68 +7,107 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #F3EAD6; /* Cor de fundo clara */
-    color: #5B4636; /* Texto escuro */
+    background-color: #F9F4D7; /* Cor de fundo mais clara */
+    color: #5B4636; /* Cor do texto */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
-    padding: 20px;
+    padding: 10px;
 }
 
+/* Cabeçalho */
 header {
+    width: 100%;
+    color: #5B4636; /* Cor do texto */
+    padding: 0px 0;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    color: #A66D45; /* Cor do título */
-    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-/* Links */
-a {
-    color: #A66D45;
-    font-weight: bold;
+header h1 {
+    font-size: 2.5rem;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Barra de Navegação */
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    padding: 10px 0;
+    background-color: #D2C98A; /* Cor de fundo da barra */
+    margin: 0;
+    border-radius: 5px;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li a {
+    color: white;
     text-decoration: none;
-    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block; /* Garante que o link ocupe o espaço completo do item */
 }
 
-a:hover {
-    color: #D2C98A; /* Hover com cor mais clara */
+.nav-list li a:hover {
+    background-color: #A66D45; /* Cor de fundo do item ao passar o mouse */
+    color: #D2C98A; /* Cor do texto ao passar o mouse */
+    border-radius: 5px; /* Deixa os cantos arredondados ao passar o mouse */
 }
 
-/* Notícias */
+/* Corpo principal (notícias) */
 main {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
     margin-top: 20px;
 }
 
+/* Estilo para cada notícia */
 #noticia {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    background-color: #D2C98A; /* Cor de fundo das notícias */
+    flex-direction: column; /* Mudar para coluna para o texto ficar abaixo da imagem */
+    width: calc(33.33% - 20px); /* Três notícias lado a lado */
+    background-color: #D2C98A;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#foto {
+    transition: transform 0.3s ease;
     margin-bottom: 20px;
 }
 
+#noticia:hover {
+    transform: translateY(-10px); /* Efeito de hover nas notícias */
+}
+
+
+#foto {
+    width: 100%; /* Imagem vai ocupar toda a largura do contêiner */
+    height: 200px; /* Tamanho fixo para as imagens */
+    margin-bottom: 15px; /* Espaço entre a imagem e o conteúdo */
+}
+
 #foto img {
-    width: 100%;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
     border-radius: 8px;
 }
 
+
 #info h1 {
-    color: #A66D45;
-    font-size: 1.8rem;
+    color: #5B4636;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
@@ -82,13 +121,44 @@ main {
     color: #5B4636;
 }
 
-/* Informações extras */
-#info br {
-    margin-bottom: 10px;
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    #noticia {
+        width: calc(50% - 20px); /* Duas notícias lado a lado em telas menores */
+    }
 }
 
-#info {
-    font-size: 1rem;
-    font-style: italic;
-    color: #5B4636;
+@media (max-width: 768px) {
+    #noticia {
+        width: 100%; /* Uma notícia por linha em telas pequenas */
+    }
+}
+
+/* Links adicionais (logar, voltar) */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #A66D45;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #D2C98A; /* Hover com cor mais clara */
+}
+
+/* Estilo do rodapé ou links no final */
+a {
+    color: #A66D45;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #D2C98A;
 }

@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $nomeImagem = uniqid() . "." . $extensao;
-        $destino = "uploads/" . $nomeImagem;
+        $destino = "upload/" . $nomeImagem;
 
         if (!move_uploaded_file($imagem['tmp_name'], $destino)) {
             die("Erro ao salvar a imagem.");
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Publicar</h1>
         </header>
         <br>
-        <a href="gerenciador.php">Gerenciador de noticias</a>
+        <a href="gerenciador.php">Gerenciador de notícias</a>
         <br>
         <form method="POST" enctype="multipart/form-data">
             <label for="titulo">Título:</label>
@@ -95,8 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="noticia">Informações da notícia:</label>
             <input type="text" name="noticia" required>
 
-            <label for="imagem">Imagem da notícia:</label>
-            <input type="file" name="imagem" id="imagem" accept="jpg,png">
+            <label for="imagem">Imagem:</label>
+            <input type="file" name="imagem" id="imagem" accept="jpg,png" required>
+            <span id="file-name">Nenhum arquivo escolhido</span>
 
             <input id="button" type="submit" value="Adicionar">
             <?php if ($msg) echo "<h1>" . $msg . "</h1>"; ?>
