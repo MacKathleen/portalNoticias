@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once './config/config.php';
 include_once './classes/noticia.php';
@@ -6,6 +7,7 @@ include_once './classes/usuario.php';
 
 $noticia = new noticia($db);
 $dados = $noticia->ler();
+
 ?>
 
 <!DOCTYPE html>
@@ -22,44 +24,41 @@ $dados = $noticia->ler();
 
     <header>
         <ul class="nav-list">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="sobre.php">Sobre</a></li>
-            <li><a href="cadastroNoticia.php">Nova Notícia</a></li>
-            <li><a href="registrar.php">Novo Usuario</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
-        <h1>Notícias</h1>
     </header>
-    
+
     <main>
-        <?php while ($row = $dados->fetch(PDO::FETCH_ASSOC)) : ?>
-            <?php
-        
-            $usuario = new Usuario($db);
-            $infoUsu = $usuario->lerPorId($row['autor']);
-            ?>
+        <h1 style="width: 100%; text-align: center;">Notícias</h1>
 
-           
-            <div id="noticia">
-                <div id="foto">
-                    <img src="<?php echo $row['fotos']; ?>" alt="Imagem da notícia">
-                </div>
-                <div id="info">
-                    <h1><?php echo $row['titulo']; ?></h1>
-                    <p><?php echo $row['noticias']; ?></p>
-                    <br><br>
-                    <p><strong>Por:</strong> <?php echo $infoUsu['nome']; ?></p>
-                    <p><strong>Data:</strong> <?php echo $row['data']; ?></p>
-                </div>
-            </div>
+        <div style="display: flex; gap: 5%">
+            <?php while ($row = $dados->fetch(PDO::FETCH_ASSOC)) : ?>
+                <?php
 
-        <?php endwhile; ?>
+                $usuario = new Usuario($db);
+                $infoUsu = $usuario->lerPorId($row['autor']);
+                ?>
+
+                <div id="noticia">
+                    <div id="foto">
+                        <img src="<?php echo $row['fotos']; ?>" alt="Imagem da notícia">
+                    </div>
+                    <div id="info">
+                        <h1><?php echo $row['titulo']; ?></h1>
+                        <p><?php echo $row['noticias']; ?></p>
+                        <br><br>
+                        <p><strong>Por:</strong> <?php echo $infoUsu['nome']; ?></p>
+                        <p><strong>Data:</strong> <?php echo $row['data']; ?></p>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+        </div>
     </main>
 
 
     <div class="links">
-        <a href="login.php">Logar</a>
-        <a href="gerenciador.php">Voltar</a>
+
     </div>
 
 </body>

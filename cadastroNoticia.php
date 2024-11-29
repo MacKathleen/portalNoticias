@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Publicar</h1>
         </header>
         <br>
-        <a href="gerenciador.php">Gerenciador de notícias</a>
+        <a href="index.php">Voltar</a>
         <br>
         <form method="POST" enctype="multipart/form-data">
             <label for="titulo">Título:</label>

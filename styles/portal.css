@@ -1,5 +1,5 @@
 /* Reset básico */
-body, h1, table {
+body, h1, table, ul {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -12,8 +12,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -36,27 +36,7 @@ header h1 {
     text-align: center;
 }
 
-/* Links de navegação */
-#links {
-    margin-bottom: 20px;
-    text-align: center;
-}
 
-#links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #A66D45;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 2px solid #A66D45;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-#links a:hover {
-    background-color: #A66D45;
-    color: #F3EAD6;
-}
 
 /* Tabela */
 main {
@@ -91,7 +71,7 @@ tr:nth-child(even) {
     background-color: #F3EAD6;
 }
 
-/* Ícones de ação */
+/* Ícones de ação na tabela */
 td img {
     width: 20px;
     height: 20px;

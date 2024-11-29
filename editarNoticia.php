@@ -14,8 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $data = $_POST['data'];
-    $noticia = $_POST['noticias'];
-    $foto = "./imagens/" . $_POST['fotos'];
+    $noticia = $_POST['noticia'];
+    print_r($_POST);
+    if ($_POST['foto'] != '') {
+        $foto = "./upload/" . $_POST['foto'];
+    } else {
+        $foto = '';
+    }
     $noticias->atualizar($id, $titulo, $autor, $data, $noticia, $foto);
     header('Location: gerenciador.php');
     exit();
@@ -38,15 +43,15 @@ if (isset($_GET['id'])) {
     <h1>Editar Usuário</h1>
     <form method="POST">
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-      
+
         <label for="titulo">Título:</label>
         <input type="text" name="titulo" value="<?php echo $row['titulo']; ?>" required>
         <br><br>
-      
+
         <label>Autor:</label>
         <input type="text" name="autor" value="<?php echo $row['autor']; ?>" required>
         <br><br>
-       
+
         <label for="noticia">Informações da notícia:</label>
         <input type="text" id="noticia" name="noticia" value="<?php echo htmlspecialchars($row['noticias']); ?>" required>
         <br><br>
@@ -54,11 +59,11 @@ if (isset($_GET['id'])) {
         <label for="data">Data:</label>
         <input type="date" name="data" value="<?php echo $row['data']; ?>" required>
         <br><br>
-      
+
         <label for="email">Foto:</label>
-        <input type="file" name="foto" value="<?php echo $row['fotos']; ?>" >
+        <input type="file" name="foto" value="<?php echo $row['fotos']; ?>">
         <br><br>
-        
+
         <input type="submit" value="Atualizar">
     </form>
 </body>

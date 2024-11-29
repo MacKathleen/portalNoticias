@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="styles/editar.css">
 </head>
 <body>
     <h1>Editar Usuário</h1>

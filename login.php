@@ -1,9 +1,15 @@
 <?php
-//esse comando e um cokie mais seguro (isso oque o professor falou)
 session_start();
 
+//esse comando e um cokie mais seguro (isso oque o professor falou)
 include_once './config/config.php';
 include_once './classes/usuario.php';
+
+
+if (isset($_SESSION['usuario_id'])) {
+    header('Location: gerenciador.php');
+    exit();
+}
 
 //instanciando o obj da class usuario
 $usuario = new Usuario($db);
@@ -22,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuario_id'] = $dados_usuario['id'];
 
             //vai pra portal.php
-            header('Location:portal.php');
+            header('Location: gerenciador.php');
 
             exit();
         } else {

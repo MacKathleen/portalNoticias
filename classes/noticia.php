@@ -42,9 +42,16 @@ class noticia
 
     public function atualizar($id, $titulo, $autor, $data, $noticias, $fotos)
     {
-        $query = "UPDATE " . $this->table_name . " SET titulo = ?, autor = ?, data = ?, noticias = ?,fotos = ? WHERE id = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute([$titulo, $autor, $data, $noticias, $fotos, $id]);
+        if ($fotos == '') {
+            $query = "UPDATE " . $this->table_name . " SET titulo = ?, autor = ?, data = ?, noticias = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$titulo, $autor, $data, $noticias, $id]);
+        } else {
+            $query = "UPDATE " . $this->table_name . " SET titulo = ?, autor = ?, data = ?, noticias = ?, fotos = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$titulo, $autor, $data, $noticias, $fotos, $id]);
+        }
+
 
         return $stmt;
     }

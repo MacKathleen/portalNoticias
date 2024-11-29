@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #F9F4D7; /* Cor de fundo mais clara */
+    background-color: #FFF4E6;
     color: #5B4636; /* Cor do texto */
     display: flex;
     flex-direction: column;
@@ -23,7 +23,12 @@ header {
     color: #5B4636; /* Cor do texto */
     padding: 0px 0;
     text-align: center;
-    margin-bottom: 10px;
+    position: fixed; /* Torna o header fixo no topo */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Garante que o header fique acima de outros elementos */
+    background-color: #FFF4E6; /* Cor de fundo para sobrepor a cor de fundo do body */
+    margin: 0; /* Remove a margem inferior */
 }
 
 header h1 {
@@ -37,16 +42,13 @@ header h1 {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    gap: 0px;
+    gap: 20px; /* Alinha os itens com um espaço entre eles */
     padding: 10px 0;
     background-color: #D2C98A; /* Cor de fundo da barra */
     margin: 0;
     border-radius: 5px;
 }
 
-.nav-list li {
-    display: inline;
-}
 
 .nav-list li a {
     color: white;
@@ -70,7 +72,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 120px; /* Ajuste para não sobrepor o header fixo */
 }
 
 /* Estilo para cada notícia */

@@ -88,3 +88,23 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #8C5731;
 }
+
+@media (max-width: 375px) {
+    body {
+        padding: 0 10px; /* Adiciona um pouco de padding para evitar que o conteúdo toque as bordas da tela */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título para telas pequenas */
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%; /* Garantir que o formulário use toda a largura disponível */
+        padding: 15px; /* Menos padding para economizar espaço */
+    }
+
+    form input[type="submit"] {
+        width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+    }
+}

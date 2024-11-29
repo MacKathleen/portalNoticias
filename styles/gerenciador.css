@@ -28,26 +28,35 @@ header h1 {
     margin-bottom: 20px;
 }
 
-/* Links do menu */
-#links {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #A66D45;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 2px solid #A66D45;
+/* Lista de Navegação (nav-list) */
+/* Barra de Navegação */
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    padding: 10px 0;
+    background-color: #D2C98A; /* Cor de fundo da barra */
+    margin: 0;
     border-radius: 5px;
-    transition: all 0.3s;
 }
 
-#links a:hover {
-    background-color: #A66D45;
-    color: #F3EAD6;
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block; /* Garante que o link ocupe o espaço completo do item */
+}
+
+.nav-list li a:hover {
+    background-color: #A66D45; /* Cor de fundo do item ao passar o mouse */
+    color: #D2C98A; /* Cor do texto ao passar o mouse */
+    border-radius: 5px; /* Deixa os cantos arredondados ao passar o mouse */
 }
 
 /* Tabela */
