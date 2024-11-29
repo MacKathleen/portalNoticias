@@ -31,7 +31,7 @@ $dados = $noticia->ler();
     <main>
         <h1 style="width: 100%; text-align: center;">Notícias</h1>
 
-        <div style="display: flex; gap: 5%">
+        <div style="display: flex;   height: 300px; gap: 15px; flex-wrap: wrap; justify-content:flex-start; align-items:center;">
             <?php while ($row = $dados->fetch(PDO::FETCH_ASSOC)) : ?>
                 <?php
 
